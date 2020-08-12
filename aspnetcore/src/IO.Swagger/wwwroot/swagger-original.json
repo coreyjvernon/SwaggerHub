@@ -10,10 +10,10 @@
       "name" : "Apache 2.0",
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version" : "1.1.0"
+    "version" : "1.0.0"
   },
   "servers" : [ {
-    "url" : "https://virtserver.swaggerhub.com/Corey_Projects/424demo/1.0.0",
+    "url" : "https://virtserver.swaggerhub.com/Corey_Projects/CA812/1.0.0",
     "description" : "SwaggerHub API Auto Mocking"
   } ],
   "tags" : [ {
@@ -60,7 +60,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
-            "maximum" : 50.0,
+            "maximum" : 50,
             "minimum" : 0,
             "type" : "integer",
             "format" : "int32"
@@ -112,43 +112,6 @@
             "description" : "an existing item already exists"
           }
         }
-      },
-      "delete" : {
-        "tags" : [ "admins" ],
-        "summary" : "Deletes an item.",
-        "operationId" : "Deletes an item from the system",
-        "parameters" : [ {
-          "name" : "api_key",
-          "in" : "header",
-          "required" : false,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
-          "name" : "itemId",
-          "in" : "path",
-          "description" : "Item id to delete",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "integer",
-            "format" : "int64"
-          }
-        } ],
-        "responses" : {
-          "201" : {
-            "description" : "item deleted"
-          },
-          "400" : {
-            "description" : "Invalid ID supplied"
-          },
-          "404" : {
-            "description" : "this item does not exist"
-          }
-        }
       }
     }
   },
@@ -169,14 +132,15 @@
           },
           "releaseDate" : {
             "type" : "string",
-            "format" : "date-time"
+            "format" : "date-time",
+            "example" : "2016-08-29T09:12:33.001Z"
           },
           "manufacturer" : {
             "$ref" : "#/components/schemas/Manufacturer"
           }
         },
         "example" : {
-          "releaseDate" : "2000-01-23T04:56:07.000+00:00",
+          "releaseDate" : "2016-08-29T09:12:33.001Z",
           "name" : "Widget Adapter",
           "id" : "d290f1ee-6c54-4b01-90e6-d701748f0851",
           "manufacturer" : {
